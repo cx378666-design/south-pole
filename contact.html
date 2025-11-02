@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Explore Antarctica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="snow"></canvas>
+
+  
+  <header>
+    <div class="logo"> Antarctica</div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="wildlife.html">Wildlife</a></li>
+        <li><a href="climate.html">Climate</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger"><div></div><div></div><div></div></div>
+    </nav>
+  </header>
+
+  
+  <section class="hero contact-hero fade-in">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>Have questions or want to collaborate on Antarctic research? Reach out to us!</p>
+    </div>
+  </section>
+
+
+  <section class="info slide-up contact-form-section">
+    <h2> Contact Form</h2>
+    <p>Fill in the form below and we’ll get back to you as soon as possible.</p>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required />
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required />
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Message</label>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+      <p id="formMessage" class="form-message"></p>
+    </form>
+  </section>
+  <section class="info scroll-animate">
+  <h2> Antarctica Climate</h2>
+  <p>Extreme cold and icy landscapes with fascinating scientific studies.</p>
+</section>
+
+
+  
+  <section class="info fade-in">
+    <h2> Research Stations Map</h2>
+    <p>Our main research stations are located across Antarctica. Here’s a map of key locations:</p>
+    <div class="map-placeholder">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Antarctica_map.png" alt="Antarctica Map" />
+    </div>
+  </section>
+
+  
+  <section class="info slide-up">
+    <h2> Connect With Us</h2>
+    <p>Follow us on social media to stay updated on Antarctic research and wildlife news.</p>
+    <div class="social-icons">
+      <a href="#" class="social-link"> Twitter</a>
+      <a href="#" class="social-link"> Facebook</a>
+      <a href="#" class="social-link"> Instagram</a>
+      <a href="#" class="social-link"> LinkedIn</a>
+    </div>
+  </section>
+
+  
+  <footer>
+    <p>© 2025 Explore Antarctica | Designed by inam </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

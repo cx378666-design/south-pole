@@ -1,0 +1,711 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #e6faff;
+  background: linear-gradient(to bottom right, #001a33, #003d66);
+  overflow-x: hidden;
+}
+
+/* ❄️ SNOW BACKGROUND */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  background: rgba(0, 30, 50, 0.7);
+  backdrop-filter: blur(6px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00d4ff;
+  transform: scale(1.1);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* HERO SECTION */
+.hero {
+  height: 85vh;
+  background: linear-gradient(rgba(0,0,30,0.6), rgba(0,0,40,0.7)), 
+              url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Antarctica_iceberg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+  from { text-shadow: 0 0 5px #00d4ff; }
+  to { text-shadow: 0 0 15px #00d4ff, 0 0 30px #00aaff; }
+}
+
+.hero p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: linear-gradient(45deg, #00aaff, #00d4ff);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,212,255,0.4);
+}
+
+/* INFO SECTIONS */
+.info, .content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  text-align: center;
+  transition: transform 0.5s ease, background 0.3s;
+}
+
+.info:hover {
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.12);
+}
+
+/* FOOTER */
+footer {
+  background: rgba(0,30,50,0.8);
+  text-align: center;
+  padding: 15px 0;
+  color: #cceeff;
+  font-size: 0.9em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,30,50,0.95);
+    width: 200px;
+    display: none;
+    border-radius: 8px;
+  }
+
+  .navbar ul.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero h1 { font-size: 2em; }
+  .hero p { font-size: 1em; }
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* 🌨️ RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌍 GLOBAL STYLES */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #e6faff;
+  background: linear-gradient(to bottom right, #001a33, #003d66);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ❄️ SNOW BACKGROUND */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 🌐 HEADER */
+header {
+  background: rgba(0, 20, 40, 0.6);
+  backdrop-filter: blur(8px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #00d4ff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* 🍔 HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 🏔️ HERO SECTION */
+.hero {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,20,0.7), rgba(0,0,40,0.9)),
+              url("https://upload.wikimedia.org/wikipedia/commons/e/e0/Antarctica_iceberg.jpg") center/cover no-repeat;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3.2em;
+  margin-bottom: 15px;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+.hero p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #ccf2ff;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #00aaff, #00d4ff);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* 💎 INFO SECTIONS */
+.info, .climate, .explore {
+  max-width: 1000px;
+  margin: 70px auto;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.info:hover, .climate:hover, .explore:hover {
+  transform: scale(1.02);
+}
+
+/* 🧊 CARDS SECTION */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.card h3 {
+  color: #00d4ff;
+  margin: 15px 0 10px;
+  font-size: 1.2em;
+}
+
+.card p {
+  padding: 0 15px 25px;
+  font-size: 0.95em;
+  color: #cceeff;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+/* 🌡️ CLIMATE SECTION */
+.climate h2 {
+  font-size: 2em;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.climate .facts {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.climate .facts li {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #cceeff;
+}
+
+/* 🚀 EXPLORE */
+.explore {
+  background: linear-gradient(45deg, #004d73, #002a44);
+  color: white;
+}
+
+.explore h2 {
+  font-size: 2.2em;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+/* 🌙 FOOTER */
+footer {
+  background: rgba(0, 20, 40, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  color: #cceeff;
+  font-size: 0.9em;
+  margin-top: 60px;
+}
+
+/* 🌀 ANIMATIONS */
+@keyframes text-glow {
+  from { text-shadow: 0 0 5px #00d4ff; }
+  to { text-shadow: 0 0 25px #00d4ff, 0 0 50px #00aaff; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ✨ SCROLL ANIMATION CLASSES */
+.fade-in { animation: fadeInUp 1.2s ease forwards; opacity: 0; }
+.slide-up { animation: fadeInUp 1.2s ease forwards; opacity: 0; }
+.zoom-in { animation: zoomIn 1s ease forwards; opacity: 0; }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 30, 50, 0.95);
+    width: 220px;
+    display: none;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .navbar ul.show {
+    display: flex;
+    animation: fadeInUp 0.3s ease forwards;
+  }
+
+  .hamburger { display: flex; }
+
+  .hero h1 { font-size: 2.2em; }
+  .hero p { font-size: 1em; }
+  .card { width: 90%; }
+}
+
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+.about-hero {
+  background: linear-gradient(rgba(0,0,20,0.7), rgba(0,0,40,0.9)),
+    url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Antarctica_Mountains.jpg") center/cover no-repeat;
+}
+
+.about-hero .hero-content h1 {
+  font-size: 3em;
+  animation: text-glow 2s infinite alternate;
+}
+
+.about-hero .hero-content p {
+  font-size: 1.1em;
+  color: #cceeff;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+
+/* --- WILDLIFE PAGE STYLES --- */
+.wildlife-hero {
+  background: linear-gradient(rgba(0,0,30,0.6), rgba(0,0,40,0.9)),
+    url("https://upload.wikimedia.org/wikipedia/commons/f/fc/Emperor_Penguin_Colony_Antarctica.jpg") center/cover no-repeat;
+}
+
+.wildlife-hero .hero-content h1 {
+  font-size: 3em;
+  animation: text-glow 2s infinite alternate;
+}
+
+.wildlife-hero .hero-content p {
+  font-size: 1.1em;
+  color: #cceeff;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+/* --- CLIMATE PAGE STYLES --- */
+.climate-hero {
+  background: linear-gradient(rgba(0,0,20,0.7), rgba(0,0,50,0.9)),
+    url("https://upload.wikimedia.org/wikipedia/commons/6/60/Antarctic_Glacier.jpg") center/cover no-repeat;
+}
+
+.climate-hero .hero-content h1 {
+  font-size: 3em;
+  animation: text-glow 2s infinite alternate;
+}
+
+.climate-hero .hero-content p {
+  font-size: 1.1em;
+  color: #cceeff;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+.cards .card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/* --- CONTACT PAGE STYLES --- */
+.contact-hero {
+  background: linear-gradient(rgba(0,0,20,0.7), rgba(0,0,50,0.9)),
+    url("https://upload.wikimedia.org/wikipedia/commons/d/d2/Antarctic_base.jpg") center/cover no-repeat;
+}
+
+.contact-hero .hero-content h1 {
+  font-size: 3em;
+  animation: text-glow 2s infinite alternate;
+}
+
+.contact-hero .hero-content p {
+  font-size: 1.2em;
+  color: #cceeff;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+.contact-form-section form {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: border 0.3s;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #cceeff;
+  pointer-events: none;
+  transition: 0.3s all;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.85em;
+  color: #00f0ff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00f0ff;
+}
+
+.btn {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #00f0ff;
+  color: #000;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.btn:hover {
+  background: #00c0cc;
+}
+
+.map-placeholder img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  display: block;
+  margin: 20px auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #cceeff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s all;
+}
+
+.social-link:hover {
+  background: #00f0ff;
+  color: #000;
+}
+
+
+
+
+
+
+
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+.about-hero {
+  background: linear-gradient(rgba(0,0,20,0.7), rgba(0,0,40,0.9)),
+    url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Antarctica_Mountains.jpg") center/cover no-repeat;
+}
+
+.about-hero .hero-content h1 {
+  font-size: 3em;
+  animation: text-glow 2s infinite alternate;
+}
+
+.about-hero .hero-content p {
+  font-size: 1.1em;
+  color: #cceeff;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
